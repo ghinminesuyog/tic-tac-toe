@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { GameService } from './game.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tic-tac-toe';
+
+
+  constructor(
+    private gameService: GameService
+  ) {
+  }
+
+  resetGame() {
+    this.gameService.resetGame()
+  }
 }

@@ -1,0 +1,27 @@
+.game {
+    display: flex;
+    .playing-part {
+        margin: auto;
+        text-align: center;
+        .turn {
+            p {
+                text-align: center;
+                font-size: 40px;
+                color: #ed9d64;
+            }
+        }
+    }
+
+    .wins {
+        margin-top: auto;
+        margin-bottom: auto;
+        text-align: center;
+        padding: 50px;
+        color: cornflowerblue;
+
+        p {
+            font-size: 30px;
+            color: #d4b884;
+        }
+    }
+}
