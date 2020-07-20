@@ -29,6 +29,9 @@ export class GameService {
     if (this.checkWinner()) {
       this.declareWinner();
     }
+    else if (this.checkforTie()) {
+      this.declareTie();
+    }
   }
 
   getGame(): number[] {
@@ -108,33 +111,45 @@ export class GameService {
   declareWinner() {
     console.log(this.getUser(), " Won");
 
-    if (this.getUser() === 0){
+    if (this.getUser() === 0) {
       this.oWins += 1
       console.log(this.oWins)
     }
-    else if (this.getUser() === 1){
-      this.xWins +=1;
+    else if (this.getUser() === 1) {
+      this.xWins += 1;
       console.log(this.xWins)
     }
-
     var player = (this.getUser() == 0) ? 'O' : 'X';
-
+    var msg = player + ' won the game!'
+    this.displayMessage(msg)
+  }
+  declareTie() {
+    this.displayMessage('Game Tied!');
+  }
+  displayMessage(msg: string) {
     const dialogRef = this.dialog.open(DialogComponent, {
       disableClose: true,
       data: {
-        message: player + ' won the game!'
+        message: msg
       }
     })
 
     dialogRef.afterClosed().subscribe(
       (res) => {
-        console.log('rr', res)
         if (res) {
           this.resetGame();
         }
       }
     )
+  }
 
+  checkforTie() {
+    for (var i = 0; i < 9; i++) {
+
+      if (this.game[i] == null)
+        return false;
+    }
+    return true;
   }
 
   // gameOver(): boolean {
@@ -148,9 +163,9 @@ export class GameService {
   //         return true
   //       }
   //     }
-      
+
   //   }
-    
+
   //   return false;
   // }
 
