@@ -1,27 +1,90 @@
 .game {
     display: flex;
+    flex-direction: column;
+
+    padding: 10% 0;
+
+    @media only screen and (min-width: 1020px) {
+        flex-direction: row;
+        justify-content: space-around;
+        height: 100%;
+
+        padding: 0;
+    }
     .playing-part {
         margin: auto;
         text-align: center;
+
+        @media only screen and (min-width: 1020px) {
+            margin: 0;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+        @media only screen and (min-width: 2500px) {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .reset-button {
+            margin: 40px 0;
+            @media (min-width: 1020px) {
+                width: 250px;
+                height: 50px;
+                font-size: 30px;
+                line-height: 50px;
+            }
+        }
         .turn {
             p {
                 text-align: center;
                 font-size: 40px;
                 color: #ed9d64;
+                margin: 0;
+                @media screen and (min-width: 1020px) {
+                    font-size: 4vw;
+                }
+            }
+
+            @media (min-width: 2500px) {
+                margin: auto 5vw;
+            }
+        }
+        .board {
+            @media (min-width: 2500px) {
+                justify-content: space-around;
+                display: flex;
+                flex-direction: column;
+            }
+            .reset-button{
+                @media (min-width: 2500px) {
+                    margin: 0 auto;
+                }
             }
         }
     }
 
-    .wins {
-        margin-top: auto;
-        margin-bottom: auto;
-        text-align: center;
-        padding: 50px;
-        color: cornflowerblue;
+    .win-section {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        @media only screen and (min-width: 1020px) {
+            flex-direction: column;
+            font-size: 2em;
+        }
+        .wins {
+            margin-top: auto;
+            margin-bottom: auto;
+            text-align: center;
+            color: cornflowerblue;
 
-        p {
-            font-size: 30px;
-            color: #d4b884;
+            p {
+                font-size: 30px;
+                color: #d4b884;
+                @media only screen and (min-width: 1020px) {
+                    flex-direction: column;
+                    font-size: 2em;
+                }
+            }
         }
     }
 }

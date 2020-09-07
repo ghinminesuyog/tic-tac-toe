@@ -1,11 +1,5 @@
 <div class="game">
 
-  <div class="wins">
-    <h1>
-      X won
-    </h1>
-    <p> {{gameService.xWins}}</p>
-  </div>
   <div class="playing-part">
     <div class="turn">
 
@@ -18,19 +12,28 @@
     <div class="board">
       <app-board>
       </app-board>
+
+      <button class="reset-button" (click)="resetGame()" mat-raised-button color="primary">
+        Reset
+      </button>
     </div>
 
-    <button class="reset-button" (click)="resetGame()" mat-raised-button color="primary">
-      Reset
-    </button>
+   
   </div>
 
+  <div class="win-section">
+    <div class="wins">
+      <h1>
+        X won
+      </h1>
+      <p> {{gameService.xWins}}</p>
+    </div>
 
-  <div class="wins">
-    <h1>
-      O won
-    </h1>
-    <p>{{gameService.oWins}}</p>
+    <div class="wins">
+      <h1>
+        O won
+      </h1>
+      <p>{{gameService.oWins}}</p>
+    </div>
   </div>
-
 </div>

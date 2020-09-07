@@ -18,13 +18,20 @@ import { GameService } from '../game.service';
     font-size:80px;
     cursor: pointer;
     border-radius: 20px;
+    
   }
-  .x{
+  .x,.o{
     color:white
   }
-  .o{
-    color:white
-  }`
+
+  @media only screen and  (min-width: 1020px){
+   .tile{ height:10vw;
+    width:10vw;
+    line-height:10vw;
+    font-size:8vw;
+    }
+  }
+  `
   ]
 })
 export class TileComponent implements OnInit {
