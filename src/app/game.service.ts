@@ -22,10 +22,10 @@ export class GameService {
   handleTurn(onTileNumber: number) {
     var by = this.getUser();
 
-    console.log('Player', by, 'played at position', onTileNumber);
+    // console.log('Player', by, 'played at position', onTileNumber);
 
     this.game[onTileNumber] = by;
-    console.log(this.game);
+    // console.log(this.game);
     if (this.checkWinner()) {
       this.declareWinner();
     }
@@ -109,7 +109,7 @@ export class GameService {
   }
 
   declareWinner() {
-    console.log(this.getUser(), " Won");
+    // console.log(this.getUser(), " Won");
 
     if (this.getUser() === 0) {
       this.oWins += 1
