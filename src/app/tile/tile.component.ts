@@ -12,6 +12,7 @@ import { GameService } from '../game.service';
   styles: [`.tile{
     height:100px;
     width:100px;
+    line-height:100px;
     background-color:cornflowerblue;
     box-shadow:4px 4px darkslateblue;
     font-size:80px;
